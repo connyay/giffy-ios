@@ -103,6 +103,9 @@
 	}
 	[self.refreshBtn setEnabled:NO];
 	[self showProgress];
+	if ([context isEqualToString:@"ALL"]) {
+		[self.collectionView.infiniteScrollingView setEnabled:YES];
+	}
 	[LVDebounce fireAfter:.25 target:self selector:@selector(fetchGifs) userInfo:nil];
 }
 
@@ -191,6 +194,10 @@
 	if (data.count == 0 && [context isEqualToString:@"MINE"]) {
 		[giffyService setContext:@"MINE"];
 		[self fetchGifs];
+	}
+	if (data.count == 0 && [context isEqualToString:@"ALL"]) {
+		[self.collectionView.infiniteScrollingView stopAnimating];
+		[self.collectionView.infiniteScrollingView setEnabled:NO];
 	}
 }
 

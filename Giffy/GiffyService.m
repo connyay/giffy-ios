@@ -64,8 +64,12 @@
 - (void)getAllGifs:(BOOL)paged {
 	NSString *url = [NSString stringWithFormat:@"%@%@",
 	                 kGiffyEndPoint, kAllMethodName];
-	if (paged) {
+	if (paged && ![next_page isEqualToString:@""]) {
 		url = next_page;
+	}
+	else if (paged && [next_page isEqualToString:@""]) {
+		[delegate requestCompletedWithData:@[]];
+		return;
 	}
 	[self _doGet:url isPaged:paged params:nil];
 }
