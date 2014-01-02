@@ -12,6 +12,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+    SDImageCache *imageCache = [SDImageCache sharedImageCache];
+    // Max cache size = 100MB
+    // Todo: Make this a user pref
+    long maxSize = 100 * 1024 * 1024;
+    [imageCache setMaxCacheSize:maxSize];
+    
 	return YES;
 }
 
