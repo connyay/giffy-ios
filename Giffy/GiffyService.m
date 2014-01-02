@@ -91,7 +91,8 @@
 	                 kGiffyEndPoint, kLoginMethodName];
     
 	NSDictionary *params = @{ @"username": username,
-		                      @"password": password };
+		                      @"password": password,
+		                      @"remember": @true };
     
 	[self _doPost:url isPaged:NO params:params];
 }
