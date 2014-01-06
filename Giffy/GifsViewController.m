@@ -206,13 +206,13 @@
 	if (paged) {
 		newGifArray = [[NSArray alloc] initWithArray:data];
 		[self.collectionView performBatchUpdates: ^{
-		    int startIndex = gifArray.count;
+		    NSInteger startIndex = gifArray.count;
             
 		    [self updateGifs];
 		    [self updateNewGifs];
             
 		    NSMutableArray *arrayWithIndexPaths = [NSMutableArray array];
-		    for (int i = startIndex; i < gifArray.count; i++)
+		    for (NSInteger i = startIndex; i < gifArray.count; i++)
 				[arrayWithIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
 		    [self.collectionView insertItemsAtIndexPaths:arrayWithIndexPaths];
 		} completion: ^(BOOL finished) {}];
@@ -244,7 +244,7 @@
 - (void)updateGifs {
 	NSMutableArray *data = [gifArray mutableCopy];
     
-	for (int i = 0; i < newGifArray.count; i++) {
+	for (NSInteger i = 0; i < newGifArray.count; i++) {
 		[data addObject:[newGifArray objectAtIndex:i]];
 	}
 	gifArray = [NSArray arrayWithArray:data];
@@ -252,7 +252,7 @@
 
 - (void)updateNewGifs {
 	NSMutableArray *data = [newGifArray mutableCopy];
-	for (int i = 0; i < newGifArray.count; i++) {
+	for (NSInteger i = 0; i < newGifArray.count; i++) {
 		[data removeObjectAtIndex:0];
 	}
     
