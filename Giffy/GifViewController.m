@@ -73,7 +73,6 @@
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 	SDImageCache *imageCache = [SDImageCache sharedImageCache];
-	[imageCache cleanDisk];
 	[imageCache clearMemory];
 }
 
