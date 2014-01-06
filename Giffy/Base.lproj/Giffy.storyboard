@@ -43,7 +43,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiffyCell" id="3Ve-QQ-it6" customClass="GiffyGifCell">
-                                <rect key="frame" x="10" y="10" width="103" height="103"/>
+                                <rect key="frame" x="10" y="74" width="102.5" height="102.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
@@ -531,6 +531,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="k24-t8-v2l"/>
+        <segue reference="v0s-GG-Tc1"/>
     </inferredMetricsTieBreakers>
 </document>
